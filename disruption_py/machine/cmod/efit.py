@@ -5,7 +5,10 @@ Module for retrieving and processing EFIT parameters for CMOD.
 """
 
 import numpy as np
-from MDSplus import mdsExceptions
+try:
+    from MDSplus import mdsExceptions
+except ModuleNotFoundError:
+    from mdsthin.MDSplus import mdsExceptions
 
 import xarray as xr
 

@@ -10,7 +10,10 @@ import numpy as np
 import xarray as xr
 import scipy.constants as const
 from scipy.interpolate import RegularGridInterpolator, interp1d
-from MDSplus import mdsExceptions
+try:
+    from MDSplus import mdsExceptions
+except ModuleNotFoundError:
+    from mdsthin.MDSplus import mdsExceptions
 
 from disruption_py.core.physics_method.caching import cache_method
 from disruption_py.core.physics_method.decorator import physics_method

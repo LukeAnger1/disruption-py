@@ -4,7 +4,10 @@
 
 import numpy as np
 import scipy as sp
-from MDSplus import mdsExceptions
+try:
+    from MDSplus import mdsExceptions
+except ModuleNotFoundError:
+    from mdsthin.MDSplus import mdsExceptions
 
 from disruption_py.core.physics_method.params import PhysicsMethodParams
 from disruption_py.core.utils.math import interp1

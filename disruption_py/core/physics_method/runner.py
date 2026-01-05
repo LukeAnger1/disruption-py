@@ -10,7 +10,10 @@ from typing import Dict
 
 import numpy as np
 import xarray as xr
-from MDSplus import mdsExceptions
+try:
+    from MDSplus import mdsExceptions
+except ModuleNotFoundError:
+    from mdsthin.MDSplus import mdsExceptions
 
 from disruption_py.core.physics_method.errors import CalculationError
 from disruption_py.core.physics_method.metadata import (
