@@ -3,7 +3,10 @@
 """
 Module for managing retrieval of shot data from a tokamak.
 """
-import MDSplus.mdsExceptions
+try:
+    from MDSplus import mdsExceptions
+except ModuleNotFoundError:
+    from mdsthin.MDSplus import mdsExceptions
 import numpy as np
 import pandas as pd
 from loguru import logger
